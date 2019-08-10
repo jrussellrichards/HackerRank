@@ -8,6 +8,10 @@ import sys
 import copy
 
 # Complete the minimumSwaps function below.
+# Solucion: Se verifica por cada posicion (desde 0 hasta n-1) si cada elemento ubicado en ella es el que corresponde,
+# de no serlo se realiza un swap para ubicarlo donde corresponde. Se verifica nuevamente si el nuevo elemento en 
+# esa posicion es el que corresponde, se repite esto hasta que coincida. Una vez realizado esto se repite 
+# el procedimiento para cada posicion. 
 
 def minimumSwaps(arr):
     swaps=0
@@ -22,7 +26,7 @@ def minimumSwaps(arr):
 
     return swaps
 
-answer=minimumSwaps([4 ,3 ,2 ,1])
+answer=minimumSwaps([7, 1, 3, 2, 4, 5, 6])
 
 print(answer)
 

@@ -1,4 +1,4 @@
-#Sequencia de Fibonacci mediante  programacion dinamica. 
+#Sequencia de Fibonacci mediante Memoization. 
 def Fibonacci(n,memory):
     if(type(n)!=int or n<0):
         raise TypeError("n debe ser un entero positivo")

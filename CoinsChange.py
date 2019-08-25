@@ -1,3 +1,9 @@
+# Problema: https://www.hackerrank.com/challenges/coin-change/problem
+# Subproblema: La cantidad de combinaciones posibles para dar cambio dado un conjunto de monedas es igual
+# a la cantidad de combinaciones sin insertar la moneda m + la cantidad de soluciones insertando la moneda m
+
+# Tabla: Guarda todas las soluciones posibles mediante un enfoque bottom up
+
 def getWays(change, coins):
     quantity_coins=len(coins)
     table= [[0 for x in range(change+1)] for x in range(quantity_coins+1)] 
@@ -21,7 +27,7 @@ def getWays(change, coins):
 
 if __name__ == "__main__":
 
-    coins=[1,3,5]
-    change=8
+    coins=[1,3,5,12,4,17]
+    change=2000
 
     print(getWays(change,coins))

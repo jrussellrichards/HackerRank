@@ -50,6 +50,21 @@ def postOrder(root):
         print(root.info, end=' ')
 
 
-postOrder(tree.root)
+def preOrder(root):
+    if(root):
+        print(root.info, end=' ')
+        preOrder(root.left)
+        preOrder(root.right)
 
+def inOrder(root):
+    if(root):
+        inOrder(root.left)
+        print(root.info, end=' ')
+        inOrder(root.right)
 
+print('postOrder',postOrder(tree.root))
+print('inOrder',inOrder(tree.root))
+print('preOrder',preOrder(tree.root))
+
+# 6
+# 1 2 5 3 6 4

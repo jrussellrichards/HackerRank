@@ -1,56 +1,20 @@
-
-
-def check_binary_search_tree(root):
-    
-    def checkFalse(root):
-        if root:
-            
-            if(root.left):
-                
-                if(root.data <= root.left.data):
-                    return False
-                
-            if(root.right):
-                if(root.data >=root.right.data):
-                    
-                    return False
-            if(checkFalse(root.left) == False):
-                return False
-            elif(checkFalse(root.right) == False):
-                return False
-    
-    if(checkFalse(root) == False):
-        return False
+def inOrder(root):
+    global flag, pre
+    if root.left:
+        inOrder(root.left)
+    if pre < root.data:
+        pre = root.data
     else:
-        return True
-    
+        flag = False
+        return
+    if root.right:
+        inOrder(root.right)
+
 
 def check_binary_search_tree_(root):
-    l = []
-    traverse(root,l)
-    if(False in l):
-        return False
-    else:
-        return True
-def traverse(node,l):
-    if(node):
-        if(node.left):
-            if(node.left.data >= node.data):
-                l.append(False)
-                return
-            
-        if(node.right):
-            if(node.right.data <= node.data):
-                l.append(False)
-                return
-        traverse(node.left,l)
-        traverse(node.right,l)
-
-    #     4
-    #    2  5
-    #   1  3   6
-    #         8
-
+    inOrder(root)
+    global flag
+    return flag
 
 def PreOrder(root):
     if root:
@@ -102,3 +66,13 @@ if __name__ == "__main__":
   
 
     print(check_binary_search_tree(node3))
+
+
+# https://www.hackerrank.com/challenges/is-binary-search-tree/problem?utm_campaign=challenge-recommendation&utm_medium=email&utm_source=24-hour-campaign
+
+
+flag = True
+pre = -1  # As all data are >= 0 so set pre = -1
+
+
+check_binary_search_tree_(node3)
